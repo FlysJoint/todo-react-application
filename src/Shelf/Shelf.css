@@ -1,0 +1,17 @@
+
+#nowrap {
+flex-wrap: nowrap;
+}
+
+.shelf {
+    max-height: 50px;
+    min-height: 25px;
+    background-color: brown;
+    border: 2px solid black;
+    top: 90%;
+}
+
+body {
+    margin-top: 0;
+    margin-bottom: 0;
+}

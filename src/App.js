@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import TaskItem from './TaskItem/TaskItem';
 import TasksContainer from './TasksContainer/TasksContainer';
+// import TaskItem from './TasksContainer/TaskItem/TaskItem';
 
 function App() {
   return (

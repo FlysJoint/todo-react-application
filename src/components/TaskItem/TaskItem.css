@@ -62,15 +62,6 @@ body {
   margin-bottom: 0.1rem;
 }
 
-#nowrap {
-flex-wrap: nowrap;
-}
-
-.screen {
-    width: auto;
-    overflow-x: scroll;
-}
-
 .task {
     background-color: blanchedalmond;
     height: 75px;
@@ -83,22 +74,6 @@ flex-wrap: nowrap;
     border: 1px solid black;
     height: fit-content;
     margin-top: 25px;
-}
-
-.main-shelf {
-    max-height: 50px;
-    min-height: 25px;
-    background-color: brown;
-    border: 2px solid black;
-    top: 90%;
-}
-
-.shelf {
-    max-height: 50px;
-    min-height: 25px;
-    background-color: brown;
-    border: 1px solid ivory;
-    top: 90%;
 }
 
 body {

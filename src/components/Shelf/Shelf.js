@@ -8,7 +8,10 @@ function Shelf() {
         <div className="container screen">
             <div className="row" id="nowrap">
                 <TasksContainer/>
-
+                <TasksContainer/>
+                <TasksContainer/>
+                <TasksContainer/>
+                <TasksContainer/>
             </div>
         </div>
         <div className = "row shelf" id="nowrap"></div>

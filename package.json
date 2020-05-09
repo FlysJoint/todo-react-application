@@ -1,8 +1,8 @@
 {
-  "name": "todo-react-application",
+"homepage": "https://flysjoint.github.io/todo-react-application/",  
+"name": "todo-react-application",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://flysjoint.github.io/todo-react-application/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

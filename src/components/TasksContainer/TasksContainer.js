@@ -23,8 +23,9 @@ function TasksContainer(props) {
 
     // returns the correctly formatted html to define the bottles
     for (let i = 0; i < tTasks; i++) {
-      tasksHTML += `<TaskItem text=${tTasks[i].text} isCompleted=${tTasks[i].isCompleted} taskID=${tTasks[i].taskID}/>`;
+      tasksHTML += <TaskItem text={tTasks[i].text} isCompleted={tTasks[i].isCompleted} taskID={tTasks[i].taskID}/>;
     }
+    return <TaskItem text={tTasks.text} isCompleted={tTasks.isCompleted} taskID={tTasks.taskID}/>
     return tasksHTML; // needs to return a bottle component with tasks
   }
 
@@ -32,7 +33,6 @@ function TasksContainer(props) {
   return (
     <div className="container col-12 col-md-6 col-lg-4 col-xl-3 align-self-end task-box">
         {getTasks(props)}
-        <TaskItem/>
         <h2>{taskItems} Task(s)</h2>
     </div>
   );

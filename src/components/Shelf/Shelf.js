@@ -17,8 +17,9 @@ function Shelf(props) {
 
     // returns the correctly formatted html to define the bottles
     for (let i = 0; i < bTasks; i++) {
-      bottlesHTML += `<TaskContainer bottleTasks=${bTasks[i]}/>`;
+      bottlesHTML += <TasksContainer bottleTasks={`${bTasks[i]}`}/>;
     }
+    return <TasksContainer bottleTasks={``}/>
     return bottlesHTML; // needs to return a bottle component with tasks
   }
 
@@ -26,8 +27,7 @@ function Shelf(props) {
     <div>
         <div className="container screen">
             <div className="row" id="nowrap">
-                {getBottleTasks(props)}
-              <TasksContainer/>
+              {getBottleTasks(props)}
             </div>
         </div>
         <div className = "row shelf" id="nowrap"></div>

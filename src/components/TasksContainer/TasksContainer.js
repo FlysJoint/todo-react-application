@@ -2,14 +2,37 @@ import React from 'react';
 import './TasksContainer.css';
 import TaskItem from '../TaskItem/TaskItem';
 
-let taskItems = 0;
+
+
+
 
 function TasksContainer(props) {
+
+  let taskItems = 0;
+
+  let tTasks = [];
+
+  function getTasks(props) {
+
+    let tasksHTML = '';
+
+    // defines and populates the tasks
+    for (let i = 0; i < props.length; i++) {
+      tTasks.push(); // can eventually add an if here to separate bs and ns. for now, 1 array.
+    }
+
+    // returns the correctly formatted html to define the bottles
+    for (let i = 0; i < tTasks; i++) {
+      tasksHTML += `<TaskItem text=${tTasks[i].text} isCompleted=${tTasks[i].isCompleted} taskID=${tTasks[i].taskID}/>`;
+    }
+    return tasksHTML; // needs to return a bottle component with tasks
+  }
+
+
   return (
     <div className="container col-12 col-md-6 col-lg-4 col-xl-3 align-self-end task-box">
-        <TaskItem text='task one text here' deadline='5 days' isCompleted='false'/>
-        <TaskItem text='task 17 text here' deadline='0 days!' isCompleted='false'/>
-        <TaskItem text='task 66 text here' isCompleted='true'/>
+        {getTasks(props)}
+        <TaskItem/>
         <h2>{taskItems} Task(s)</h2>
     </div>
   );

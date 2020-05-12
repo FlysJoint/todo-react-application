@@ -20,7 +20,7 @@ function App() {
   function getShelfTasks(tasks) {
 
     let shelfTitles = [];
-    let shelvesHTML;
+    let shelvesHTML = [];
 
     // defines the required shelf amount and puts the shelf names in an array
     for (let i = 0; i < tasks.length; i++) {
@@ -28,25 +28,19 @@ function App() {
         shelfTitles.push(tasks[i].shelf);
       }
     }
-
     let sTasks = new Array(shelfTitles.length);
-    //console.log(sTasks);
 
+    // sorts the tasks into the relevant shelf
     for (let i = 0; i < shelfTitles.length; i++) {
       sTasks[i] = Object.values(tasks).filter(x => x.shelf === shelfTitles[i]);
-      shelvesHTML = <Shelf tasks/>;
+      shelvesHTML.push(<Shelf tasks/>);
     }
-    console.log(sTasks);
-    console.log(shelvesHTML);
-
     return <div>{shelvesHTML}</div>;
-    // i want to have a shelf per inner array
   }
 
   return (
     <div className="App">
       {getShelfTasks(tasks)}
-      <Shelf tasks />
     </div>
   );
 }

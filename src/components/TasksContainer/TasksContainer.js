@@ -6,34 +6,36 @@ function TasksContainer(props) {
 
   let taskItems = props.bottleTasks.length;
 
-  // function getTasks(props) {
+  function getTasks(props) {
 
-  //   let bottleTitles = [];
-  //   let bottleHTML = [];
+    //let bottleTitles = [];
+    let taskHTML = [];
 
-  //   // defines the required shelf amount and puts the shelf names in an array
-  //   for (let i = 0; i < props.shelfTasks.length; i++) {
-  //     if (bottleTitles.includes(props.shelfTasks[i].bottle) === false) {
-  //       bottleTitles.push(props.shelfTasks[i].bottle);
-  //     }
-  //   }
-  //   let bTasks = new Array(bottleTitles.length);
+    // defines whether a task is b or n, implement later
+    // for (let i = 0; i < props.shelfTasks.length; i++) {
+    //   if (bottleTitles.includes(props.shelfTasks[i].bottle) === false) {
+    //     bottleTitles.push(props.shelfTasks[i].bottle);
+    //   }
+    // }
+    //let bTasks = new Array(bottleTitles.length);
 
-  //   // sorts the tasks into the relevant shelf
-  //   for (let i = 0; i < bottleTitles.length; i++) {
-  //     bTasks[i] = props.shelfTasks.filter(x => x.bottle === bottleTitles[i]);
-  //     bottleHTML.push(<TasksContainer bottleTasks={bTasks[i]}/>);
-  //   }
-  //   return <div>{bottleHTML}</div>;
-  // }
+    // sorts the tasks into the relevant shelf
+    for (let i = 0; i < props.bottleTasks.length; i++) { // don't use taskIems here because you'll probably alter it with complete/incomplete later
+      //bTasks[i] = props.shelfTasks.filter(x => x.bottle === bottleTitles[i]);
+      taskHTML.push(<TaskItem text={props.bottleTasks[i].text} completed={props.bottleTasks[i].isCompleted} taskID={props.bottleTasks[i].taskID}/>);
+    }
+    return <div>{taskHTML}</div>;
+  }
 
   return (
     <div className="container col-12 col-md-6 col-lg-4 col-xl-3 align-self-end task-box">
         {/* <TaskItem text={props.bottleTasks[0].text}/>
         <TaskItem text={props.bottleTasks[1].text}/>
         <TaskItem text={props.bottleTasks[2].text}/> */}
-        <TaskItem text={props.bottleTasks[0].text}/>
-        <h2>{taskItems} Task(s)</h2>
+        {/* <TaskItem /> */}
+        {getTasks(props)}
+        {/* { {props.bottleTasks.map(task => <TaskItem text={props.bottleTasks.text}/>)} */}  
+        <h2>{taskItems > 1 ? `${taskItems} tasks` : '1 task'}</h2>
     </div>
   );
 }

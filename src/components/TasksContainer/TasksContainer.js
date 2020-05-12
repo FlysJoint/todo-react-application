@@ -2,10 +2,6 @@ import React from 'react';
 import './TasksContainer.css';
 import TaskItem from '../TaskItem/TaskItem';
 
-
-
-
-
 function TasksContainer(props) {
 
   let taskItems = 0;
@@ -33,6 +29,9 @@ function TasksContainer(props) {
   return (
     <div className="container col-12 col-md-6 col-lg-4 col-xl-3 align-self-end task-box">
         {getTasks(props)}
+        <TaskItem/>
+        <TaskItem/>
+        <TaskItem props/>
         <h2>{taskItems} Task(s)</h2>
     </div>
   );

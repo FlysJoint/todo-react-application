@@ -4,23 +4,30 @@ import TasksContainer from '../TasksContainer/TasksContainer';
 
 function Shelf(props) {
 
-  let bTasks = [];
-
   function getBottleTasks(props) {
 
-    let bottlesHTML = '';
+    let bottleTitles = [];
+    let bottlesHTML; // just outside function for debug. put it back if you can
 
-    // defines and populates the bottles
+    // defines the required shelf amount and puts the shelf names in an array
     for (let i = 0; i < props.length; i++) {
-      if (props.bottle === i) bTasks[i].push();
+      if (bottleTitles.includes(props[i].bottle) === false) {
+        bottleTitles.push(props[i].bottle);
+      }
     }
 
-    // returns the correctly formatted html to define the bottles
-    for (let i = 0; i < bTasks; i++) {
-      bottlesHTML += <TasksContainer bottleTasks={`${bTasks[i]}`}/>;
+    let bTasks = new Array(bottleTitles.length);
+    //console.log(bTasks);
+
+    for (let i = 0; i < bottleTitles.length; i++) {
+      bTasks[i] = Object.values(props).filter(x => x.bottle === bottleTitles[i]);
+      bottlesHTML = <TasksContainer props/>;
     }
-    return <TasksContainer bottleTasks={``}/>
-    return bottlesHTML; // needs to return a bottle component with tasks
+    console.log(bTasks);
+    console.log(bottlesHTML);
+
+    return <div>{bottlesHTML}</div>;
+    // i want to have a shelf per inner array
   }
 
   return (
@@ -28,6 +35,7 @@ function Shelf(props) {
         <div className="container screen">
             <div className="row" id="nowrap">
               {getBottleTasks(props)}
+              <TasksContainer props/>
             </div>
         </div>
         <div className = "row shelf" id="nowrap"></div>

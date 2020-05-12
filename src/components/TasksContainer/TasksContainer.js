@@ -22,7 +22,7 @@ function TasksContainer(props) {
     // sorts the tasks into the relevant shelf
     for (let i = 0; i < props.bottleTasks.length; i++) { // don't use taskIems here because you'll probably alter it with complete/incomplete later
       //bTasks[i] = props.shelfTasks.filter(x => x.bottle === bottleTitles[i]);
-      taskHTML.push(<TaskItem text={props.bottleTasks[i].text} completed={props.bottleTasks[i].isCompleted} taskID={props.bottleTasks[i].taskID}/>);
+      taskHTML.push(<TaskItem text={props.bottleTasks[i].text} completed={props.bottleTasks[i].isCompleted} taskID={props.bottleTasks[i].taskID} deadline={props.bottleTasks[i].deadline}/>);
     }
     return <div>{taskHTML}</div>;
   }
@@ -34,7 +34,7 @@ function TasksContainer(props) {
         <TaskItem text={props.bottleTasks[2].text}/> */}
         {/* <TaskItem /> */}
         {getTasks(props)}
-        {/* { {props.bottleTasks.map(task => <TaskItem text={props.bottleTasks.text}/>)} */}  
+        {/* { {props.bottleTasks.map(task => <TaskItem text={props.bottleTasks[i].text} completed={props.bottleTasks[i].isCompleted} taskID={props.bottleTasks[i].taskID}/>)} */}  
         <h2>{taskItems > 1 ? `${taskItems} tasks` : '1 task'}</h2>
     </div>
   );

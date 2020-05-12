@@ -6,16 +6,16 @@ function App() {
 
   // destructuring method
   const [tasks, setTasks] = useState([
-    { text: 'Fly to Mars', isCompleted: true, shelf: 'morning', bottle:1,  taskID: 1 },  /*an array instead with a b/n bool*/
-    { text: 'Get marooned', isCompleted: false, shelf: 'morning', bottle:1,  taskID: 3 },
-    { text: 'Grow spuds from poo', isCompleted: false, shelf: 'morning', bottle:1,  taskID: 2},
-    { text: 'Walk cats', isCompleted: true, shelf: 'afternoon', bottle:2,  taskID: 4 },
-    { text: 'Wash dinner', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: 5 },
-    { text: 'Dress dog', isCompleted: false, shelf: 'afternoon', bottle:1,  taskID: 6 },
-    { text: 'Walk kids', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: 7 },
-    { text: 'Watch Alien', isCompleted: false, shelf: 'evening', bottle:1,  taskID: 8 },
-    { text: 'Watch Aliens', isCompleted: true, shelf: 'evening', bottle:1,  taskID: 9 },
-    { text: 'Go to bed', isCompleted: false, shelf: 'evening', bottle:2, taskID: 10 }
+    { text: 'Fly to Mars', isCompleted: true, shelf: 'morning', bottle:1,  taskID: 1, deadline: 4 },  /*an array instead with a b/n bool*/
+    { text: 'Get marooned', isCompleted: false, shelf: 'morning', bottle:1,  taskID: 3 , deadline: 0}, // rearrange the order of the properties to be tidier
+    { text: 'Grow spuds from poo', isCompleted: false, shelf: 'morning', bottle:1,  taskID: 2, deadline: 2},
+    { text: 'Walk cats', isCompleted: true, shelf: 'afternoon', bottle:2,  taskID: 4, deadline: 11},
+    { text: 'Wash dinner', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: 5, deadline: 7},
+    { text: 'Dress dog', isCompleted: false, shelf: 'afternoon', bottle:1,  taskID: 6 }, // needs to handle no deadline
+    { text: 'Walk kids', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: 7, deadline: 8},
+    { text: 'Watch Alien', isCompleted: false, shelf: 'evening', bottle:1,  taskID: 8, deadline: 24},
+    { text: 'Watch Aliens', isCompleted: true, shelf: 'evening', bottle:1,  taskID: 9, deadline: 365},
+    { text: 'Go to bed', isCompleted: false, shelf: 'evening', bottle:2, taskID: 10, deadline: 1}
   ]);
 
   function getShelfTasks(tasks) {

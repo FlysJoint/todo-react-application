@@ -4,6 +4,7 @@ import Shelf from './components/Shelf/Shelf';
 
 function App() {
 
+  // destructuring method
   const [tasks, setTasks] = useState([
     { text: 'Fly to Mars', isCompleted: true, shelf: 'morning', bottle:1,  taskID: 1 },  /*an array instead with a b/n bool*/
     { text: 'Get marooned', isCompleted: false, shelf: 'morning', bottle:1,  taskID: 3 },
@@ -33,7 +34,7 @@ function App() {
     // sorts the tasks into the relevant shelf
     for (let i = 0; i < shelfTitles.length; i++) {
       sTasks[i] = Object.values(tasks).filter(x => x.shelf === shelfTitles[i]);
-      shelvesHTML.push(<Shelf tasks/>);
+      shelvesHTML.push(<Shelf shelfTasks={sTasks[i]}/>);
     }
     return <div>{shelvesHTML}</div>;
   }

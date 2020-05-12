@@ -4,34 +4,35 @@ import TaskItem from '../TaskItem/TaskItem';
 
 function TasksContainer(props) {
 
-  let taskItems = 0;
+  let taskItems = props.bottleTasks.length;
 
-  let tTasks = [];
+  // function getTasks(props) {
 
-  function getTasks(props) {
+  //   let bottleTitles = [];
+  //   let bottleHTML = [];
 
-    let tasksHTML = '';
+  //   // defines the required shelf amount and puts the shelf names in an array
+  //   for (let i = 0; i < props.shelfTasks.length; i++) {
+  //     if (bottleTitles.includes(props.shelfTasks[i].bottle) === false) {
+  //       bottleTitles.push(props.shelfTasks[i].bottle);
+  //     }
+  //   }
+  //   let bTasks = new Array(bottleTitles.length);
 
-    // defines and populates the tasks
-    for (let i = 0; i < props.length; i++) {
-      tTasks.push(); // can eventually add an if here to separate bs and ns. for now, 1 array.
-    }
-
-    // returns the correctly formatted html to define the bottles
-    for (let i = 0; i < tTasks; i++) {
-      tasksHTML += <TaskItem text={tTasks[i].text} isCompleted={tTasks[i].isCompleted} taskID={tTasks[i].taskID}/>;
-    }
-    return <TaskItem text={tTasks.text} isCompleted={tTasks.isCompleted} taskID={tTasks.taskID}/>
-    return tasksHTML; // needs to return a bottle component with tasks
-  }
-
+  //   // sorts the tasks into the relevant shelf
+  //   for (let i = 0; i < bottleTitles.length; i++) {
+  //     bTasks[i] = props.shelfTasks.filter(x => x.bottle === bottleTitles[i]);
+  //     bottleHTML.push(<TasksContainer bottleTasks={bTasks[i]}/>);
+  //   }
+  //   return <div>{bottleHTML}</div>;
+  // }
 
   return (
     <div className="container col-12 col-md-6 col-lg-4 col-xl-3 align-self-end task-box">
-        {getTasks(props)}
-        <TaskItem/>
-        <TaskItem/>
-        <TaskItem props/>
+        {/* <TaskItem text={props.bottleTasks[0].text}/>
+        <TaskItem text={props.bottleTasks[1].text}/>
+        <TaskItem text={props.bottleTasks[2].text}/> */}
+        <TaskItem text={props.bottleTasks[0].text}/>
         <h2>{taskItems} Task(s)</h2>
     </div>
   );

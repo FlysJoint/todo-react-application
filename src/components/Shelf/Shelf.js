@@ -22,18 +22,16 @@ function Shelf(props) {
       bTasks[i] = props.shelfTasks.filter(x => x.bottle === bottleTitles[i]);
       bottleHTML.push(<TasksContainer bottleTasks={bTasks[i]}/>);
     }
-    return <div>{bottleHTML}</div>;
+    return <div className="row" id="nowrap">{bottleHTML}</div>;
   }
 
   return (
     <div>
         <div className="container screen">
-            <div className="row" id="nowrap">
-              {getBottleTasks(props)}
-              {/* <TasksContainer/>
-              <TasksContainer/>
-              <TasksContainer/> */}
-            </div>
+            {getBottleTasks(props)}
+            {/* <TasksContainer/>
+            <TasksContainer/>
+            <TasksContainer/> */}
         </div>
         <div className = "row shelf" id="nowrap"></div>
     </div>

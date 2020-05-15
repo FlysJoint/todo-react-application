@@ -20,7 +20,7 @@ function Shelf(props) {
     // sorts the tasks into the relevant bottle
     for (let i = 0; i < bottleTitles.length; i++) {
       bTasks[i] = props.shelfTasks.filter(x => x.bottle === bottleTitles[i]);
-      bottleHTML.push(<TasksContainer bottleTasks={bTasks[i]}/>);
+      bottleHTML.push(<TasksContainer key={props.shelfTasks[i].taskID} bottleTasks={bTasks[i]}/>);
     }
     return <div className="row" id="nowrap">{bottleHTML}</div>;
   }

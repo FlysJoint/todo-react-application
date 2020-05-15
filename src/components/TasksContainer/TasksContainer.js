@@ -29,12 +29,7 @@ function TasksContainer(props) {
 
   return (
     <div className="container col-12 col-md-6 col-lg-4 col-xl-3 align-self-end task-box">
-        {/* <TaskItem text={props.bottleTasks[0].text}/>
-        <TaskItem text={props.bottleTasks[1].text}/>
-        <TaskItem text={props.bottleTasks[2].text}/> */}
-        {/* <TaskItem /> */}
         {getTasks(props)}
-        {/* { {props.bottleTasks.map(task => <TaskItem text={props.bottleTasks[i].text} completed={props.bottleTasks[i].isCompleted} taskID={props.bottleTasks[i].taskID}/>)} */}  
         <h2>{taskItems > 1 ? `${taskItems} tasks` : '1 task'}</h2>
     </div>
   );

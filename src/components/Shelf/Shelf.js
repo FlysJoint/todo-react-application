@@ -29,9 +29,6 @@ function Shelf(props) {
     <div>
         <div className="container screen">
             {getBottleTasks(props)}
-            {/* <TasksContainer/>
-            <TasksContainer/>
-            <TasksContainer/> */}
         </div>
         <div className = "row shelf" id="nowrap"></div>
     </div>

@@ -4,15 +4,6 @@ body {
     text-align: center;
 }
 
-#id-text {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  color: black;
-  border: 3px dotted red;
-  height: 25px;
-  margin-bottom: 0.1rem;
-}
-
 #task-body {
     border: 5px solid black;
     border-radius: .75rem;
@@ -79,27 +70,12 @@ flex-wrap: nowrap;
 }
 
 .task-box {
-    background-color: rgba(19, 170, 27, 0.301);
+    background-color: #AE9C45;
     border: 1px solid black;
     height: fit-content;
     margin-top: 25px;
 }
 
-.main-shelf {
-    max-height: 50px;
-    min-height: 25px;
-    background-color: brown;
-    border: 2px solid black;
-    top: 90%;
-}
-
-.shelf {
-    max-height: 50px;
-    min-height: 25px;
-    background-color: brown;
-    border: 1px solid ivory;
-    top: 90%;
-}
 
 body {
     margin-top: 0;

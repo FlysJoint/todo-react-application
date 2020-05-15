@@ -6,7 +6,7 @@ flex-wrap: nowrap;
 .shelf {
     max-height: 50px;
     min-height: 25px;
-    background-color: brown;
+    background-color: tan;
     border: 2px solid black;
     top: 90%;
 }

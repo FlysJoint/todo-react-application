@@ -4,6 +4,9 @@ import Shelf from './components/Shelf/Shelf';
 
 function App() {
 
+  // delete function needs confirmation step
+// regex task str length
+
   // destructuring method
   const [tasks, setTasks] = useState([
     { text: 'Fly to Mars', isCompleted: true, shelf: 'morning', bottle:1,  taskID: '001', deadline: 4 },  /*an array instead with a b/n bool*/
@@ -27,8 +30,19 @@ function App() {
   function deleteTask(id) {
     const updatedTasks = tasks.filter(task => task.taskID !== id);
     setTasks(updatedTasks);
-    //return updatedTasks;
   }
+
+  function completeTask(id) {
+    console.log('complete ' + id + ' clicked');
+    const updatedTasks = tasks.map(task => {
+      if(task.taskID === id) {
+        !task.isCompleted ? task.isCompleted = true : task.isCompleted = false;
+      }
+      return task;
+    });
+    setTasks(updatedTasks);
+  }
+
 
   function getShelfTasks(tasks) {
 
@@ -46,7 +60,7 @@ function App() {
     // sorts the tasks into the relevant shelf
     for (let i = 0; i < shelfTitles.length; i++) {
       sTasks[i] = Object.values(tasks).filter(x => x.shelf === shelfTitles[i]);
-      shelvesHTML.push(<Shelf key={ tasks[i].taskID } shelfTasks={sTasks[i]} deleteTask={ deleteTask }/>);
+      shelvesHTML.push(<Shelf key={ tasks[i].taskID } shelfTasks={sTasks[i]} deleteTask={ deleteTask } completeTask={ completeTask }/>);
     }
     return <div>{shelvesHTML}</div>;
   }

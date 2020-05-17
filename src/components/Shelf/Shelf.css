@@ -1,6 +1,5 @@
-
 #nowrap {
-flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
 
 .shelf {
@@ -9,9 +8,4 @@ flex-wrap: nowrap;
     background-color: tan;
     border: 2px solid black;
     top: 90%;
-}
-
-body {
-    margin-top: 0;
-    margin-bottom: 0;
 }

@@ -29,13 +29,14 @@ function Bottle(props) {
         taskID={props.bottleTasks[i].taskID} 
         deadline={props.bottleTasks[i].deadline}
         deleteTask={ props.deleteTask }
+        completeTask={ props.completeTask }
       />);
     }
     return <div>{taskHTML}</div>;
   }
 
   return (
-    <div className="container col-12 col-md-6 col-lg-4 col-xl-3 align-self-end task-box">
+    <div className="container col-12 col-md-6 col-lg-4 col-xl-3 align-self-end bottle">
         {getTasks(props)}
         <h2>{taskItems > 1 ? `${taskItems} tasks` : '1 task'}</h2>
     </div>

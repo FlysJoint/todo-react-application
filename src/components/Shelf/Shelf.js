@@ -1,6 +1,6 @@
 import React from 'react';
 import './Shelf.css';
-import TasksContainer from '../TasksContainer/TasksContainer';
+import Bottle from '../Bottle/Bottle';
 
 function Shelf(props) {
 
@@ -20,7 +20,7 @@ function Shelf(props) {
     // sorts the tasks into the relevant bottle
     for (let i = 0; i < bottleTitles.length; i++) {
       bTasks[i] = props.shelfTasks.filter(x => x.bottle === bottleTitles[i]);
-      bottleHTML.push(<TasksContainer key={props.shelfTasks[i].taskID} bottleTasks={bTasks[i]}/>);
+      bottleHTML.push(<Bottle key={props.shelfTasks[i].taskID} bottleTasks={bTasks[i]} deleteTask={ props.deleteTask } text={props.shelfTasks[i].shelf}/>);
     }
     return <div className="row" id="nowrap">{bottleHTML}</div>;
   }
@@ -30,7 +30,7 @@ function Shelf(props) {
         <div className="container screen">
             {getBottleTasks(props)}
         </div>
-        <div className = "row shelf" id="nowrap"></div>
+        <div className = "row shelf" id="nowrap">shelf name justify me</div>
     </div>
   );
 }

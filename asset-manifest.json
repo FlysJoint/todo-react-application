@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/todo-react-application/static/css/main.fc6b336c.chunk.css",
-    "main.js": "/todo-react-application/static/js/main.b0420aef.chunk.js",
-    "main.js.map": "/todo-react-application/static/js/main.b0420aef.chunk.js.map",
+    "main.css": "/todo-react-application/static/css/main.9ea2fd24.chunk.css",
+    "main.js": "/todo-react-application/static/js/main.787302f1.chunk.js",
+    "main.js.map": "/todo-react-application/static/js/main.787302f1.chunk.js.map",
     "runtime-main.js": "/todo-react-application/static/js/runtime-main.60bbbdb5.js",
     "runtime-main.js.map": "/todo-react-application/static/js/runtime-main.60bbbdb5.js.map",
-    "static/js/2.a44fe2d7.chunk.js": "/todo-react-application/static/js/2.a44fe2d7.chunk.js",
-    "static/js/2.a44fe2d7.chunk.js.map": "/todo-react-application/static/js/2.a44fe2d7.chunk.js.map",
+    "static/js/2.9bd62479.chunk.js": "/todo-react-application/static/js/2.9bd62479.chunk.js",
+    "static/js/2.9bd62479.chunk.js.map": "/todo-react-application/static/js/2.9bd62479.chunk.js.map",
     "index.html": "/todo-react-application/index.html",
-    "precache-manifest.2965432457b833f564f0ef7f5c3cac94.js": "/todo-react-application/precache-manifest.2965432457b833f564f0ef7f5c3cac94.js",
+    "precache-manifest.1f803739526d2a24bcde211b5c3608a4.js": "/todo-react-application/precache-manifest.1f803739526d2a24bcde211b5c3608a4.js",
     "service-worker.js": "/todo-react-application/service-worker.js",
-    "static/css/main.fc6b336c.chunk.css.map": "/todo-react-application/static/css/main.fc6b336c.chunk.css.map",
-    "static/js/2.a44fe2d7.chunk.js.LICENSE.txt": "/todo-react-application/static/js/2.a44fe2d7.chunk.js.LICENSE.txt",
+    "static/css/main.9ea2fd24.chunk.css.map": "/todo-react-application/static/css/main.9ea2fd24.chunk.css.map",
+    "static/js/2.9bd62479.chunk.js.LICENSE.txt": "/todo-react-application/static/js/2.9bd62479.chunk.js.LICENSE.txt",
+    "static/media/cross.svg": "/todo-react-application/static/media/cross.99c758aa.svg",
     "static/media/delete.svg": "/todo-react-application/static/media/delete.665926e2.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.60bbbdb5.js",
-    "static/js/2.a44fe2d7.chunk.js",
-    "static/css/main.fc6b336c.chunk.css",
-    "static/js/main.b0420aef.chunk.js"
+    "static/js/2.9bd62479.chunk.js",
+    "static/css/main.9ea2fd24.chunk.css",
+    "static/js/main.787302f1.chunk.js"
   ]
 }

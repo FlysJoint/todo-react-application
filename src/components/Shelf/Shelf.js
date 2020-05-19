@@ -26,6 +26,7 @@ function Shelf(props) {
           bottleTasks={bTasks[i]} 
           deleteTask={ props.deleteTask } 
           completeTask={ props.completeTask } 
+          addTask={ props.addTask }
           text={props.shelfTasks[i].shelf}
         />);
     }

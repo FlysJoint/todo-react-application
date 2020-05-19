@@ -21,3 +21,9 @@ flex-wrap: nowrap;
     height: fit-content;
     margin-top: 25px;
 }
+
+.add-svg {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+}

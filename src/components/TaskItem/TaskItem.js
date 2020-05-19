@@ -13,7 +13,7 @@ function TaskItem(props) {
           <div className="col-1 form-check" id="outline" data-toggle="tooltip" data-placement="left" title="Tick/Untick to complete/uncomplete">
             <input 
               type="checkbox" 
-              checked={ props.completed }
+              defaultChecked={ props.completed }
               className="form-check-input large-check-box" 
               id="exampleCheck1" 
               onClick={ () => props.completeTask(props.taskID) }

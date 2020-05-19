@@ -2,6 +2,8 @@ import React from 'react';
 import './Bottle.css';
 import TaskItem from '../TaskItem/TaskItem';
 
+import addIcon from '../../icons/cross.svg' // delete this after adding add
+
 function Bottle(props) {
 
   let taskItems = props.bottleTasks.length;
@@ -11,26 +13,45 @@ function Bottle(props) {
     //let bottleTitles = [];
     let taskHTML = [];
 
-    // defines whether a task is b or n, implement later unshift with one, push with t'other
-    // for (let i = 0; i < props.shelfTasks.length; i++) {
-    //   if (bottleTitles.includes(props.shelfTasks[i].bottle) === false) {
-    //     bottleTitles.push(props.shelfTasks[i].bottle);
-    //   }
-    // }
-    //let bTasks = new Array(bottleTitles.length);
+    // add task button needs to be added here so it's between push and unshifts
+    taskHTML.push(
+      <button 
+        type="button" className="col-12 btn" id="outline"
+        data-toggle="tooltip" data-placement="right" title="Add task" onClick={ () => props.addTask() }>
+        <img src={ addIcon } alt='' className='add-svg'/>
+      </button>);
 
-    // sorts the tasks into the relevant shelf
-    for (let i = 0; i < props.bottleTasks.length; i++) { // don't use taskIems here because you'll probably alter it with complete/incomplete later
-      taskHTML.push(
-      <TaskItem 
-        key={props.bottleTasks[i].taskID} 
-        text={props.bottleTasks[i].text} 
-        completed={props.bottleTasks[i].isCompleted} 
-        taskID={props.bottleTasks[i].taskID} 
-        deadline={props.bottleTasks[i].deadline}
-        deleteTask={ props.deleteTask }
-        completeTask={ props.completeTask }
-      />);
+    // sorts the tasks into the relevant position
+    for (let i = 0; i < props.bottleTasks.length; i++) {
+      switch (props.bottleTasks[i].pos) {
+        case 0:
+          taskHTML.push(
+            <TaskItem 
+              key={props.bottleTasks[i].taskID} 
+              text={props.bottleTasks[i].text} 
+              completed={props.bottleTasks[i].isCompleted} 
+              taskID={props.bottleTasks[i].taskID} 
+              deadline={props.bottleTasks[i].deadline}
+              deleteTask={ props.deleteTask }
+              completeTask={ props.completeTask }
+            />);
+            break;
+        case 1:
+          taskHTML.unshift(
+            <TaskItem 
+              key={props.bottleTasks[i].taskID} 
+              text={props.bottleTasks[i].text} 
+              completed={props.bottleTasks[i].isCompleted} 
+              taskID={props.bottleTasks[i].taskID} 
+              deadline={props.bottleTasks[i].deadline}
+              deleteTask={ props.deleteTask }
+              completeTask={ props.completeTask }
+            />);
+          break;
+        default:
+          console.log('invalid pos: ' + props.taskID);
+          break;
+      }
     }
     return <div>{taskHTML}</div>;
   }

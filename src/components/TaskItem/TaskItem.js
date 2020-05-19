@@ -11,7 +11,13 @@ function TaskItem(props) {
         <div className="row">
 
           <div className="col-1 form-check" id="outline" data-toggle="tooltip" data-placement="left" title="Tick/Untick to complete/uncomplete">
-            <input type="checkbox" className="form-check-input large-check-box" id="exampleCheck1" onClick={ () => props.completeTask(props.taskID) }></input>
+            <input 
+              type="checkbox" 
+              checked={ props.completed }
+              className="form-check-input large-check-box" 
+              id="exampleCheck1" 
+              onClick={ () => props.completeTask(props.taskID) }
+            ></input>
             <label className="form-check-label" htmlFor="exampleCheck1"></label>
           </div>
 
@@ -24,7 +30,14 @@ function TaskItem(props) {
             <img src={ deleteIcon } alt='' className='delete-svg'/>
           </button>
 
-          <p className="card-text col-12" id={`${props.completed ? "completed-task-text":"task-text"}`} data-toggle="tooltip" data-placement="bottom" title="Add task text">{props.text}</p>    
+          <p 
+            id={`${props.completed ? "completed-task-text":"task-text"}`} 
+            className="card-text col-12" 
+            data-toggle="tooltip" 
+            data-placement="bottom"
+            title="Add task text"
+            >{props.text}
+          </p>    
 
         </div>
       </div>

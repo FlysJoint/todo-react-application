@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/todo-react-application/static/css/main.9ea2fd24.chunk.css",
-    "main.js": "/todo-react-application/static/js/main.787302f1.chunk.js",
-    "main.js.map": "/todo-react-application/static/js/main.787302f1.chunk.js.map",
+    "main.css": "/todo-react-application/static/css/main.dd78654e.chunk.css",
+    "main.js": "/todo-react-application/static/js/main.af14bd99.chunk.js",
+    "main.js.map": "/todo-react-application/static/js/main.af14bd99.chunk.js.map",
     "runtime-main.js": "/todo-react-application/static/js/runtime-main.60bbbdb5.js",
     "runtime-main.js.map": "/todo-react-application/static/js/runtime-main.60bbbdb5.js.map",
-    "static/js/2.9bd62479.chunk.js": "/todo-react-application/static/js/2.9bd62479.chunk.js",
-    "static/js/2.9bd62479.chunk.js.map": "/todo-react-application/static/js/2.9bd62479.chunk.js.map",
+    "static/js/2.91466cce.chunk.js": "/todo-react-application/static/js/2.91466cce.chunk.js",
+    "static/js/2.91466cce.chunk.js.map": "/todo-react-application/static/js/2.91466cce.chunk.js.map",
     "index.html": "/todo-react-application/index.html",
-    "precache-manifest.1f803739526d2a24bcde211b5c3608a4.js": "/todo-react-application/precache-manifest.1f803739526d2a24bcde211b5c3608a4.js",
+    "precache-manifest.456eae9b456ebaf7a6358bb26c7f4734.js": "/todo-react-application/precache-manifest.456eae9b456ebaf7a6358bb26c7f4734.js",
     "service-worker.js": "/todo-react-application/service-worker.js",
-    "static/css/main.9ea2fd24.chunk.css.map": "/todo-react-application/static/css/main.9ea2fd24.chunk.css.map",
-    "static/js/2.9bd62479.chunk.js.LICENSE.txt": "/todo-react-application/static/js/2.9bd62479.chunk.js.LICENSE.txt",
-    "static/media/cross.svg": "/todo-react-application/static/media/cross.99c758aa.svg",
-    "static/media/delete.svg": "/todo-react-application/static/media/delete.665926e2.svg"
+    "static/css/main.dd78654e.chunk.css.map": "/todo-react-application/static/css/main.dd78654e.chunk.css.map",
+    "static/js/2.91466cce.chunk.js.LICENSE.txt": "/todo-react-application/static/js/2.91466cce.chunk.js.LICENSE.txt",
+    "static/media/addIcon.svg": "/todo-react-application/static/media/addIcon.5e4c0d9f.svg",
+    "static/media/deleteIcon.svg": "/todo-react-application/static/media/deleteIcon.b789f4a2.svg",
+    "static/media/downIcon.svg": "/todo-react-application/static/media/downIcon.6fd5c4ae.svg",
+    "static/media/upIcon.svg": "/todo-react-application/static/media/upIcon.cca46599.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.60bbbdb5.js",
-    "static/js/2.9bd62479.chunk.js",
-    "static/css/main.9ea2fd24.chunk.css",
-    "static/js/main.787302f1.chunk.js"
+    "static/js/2.91466cce.chunk.js",
+    "static/css/main.dd78654e.chunk.css",
+    "static/js/main.af14bd99.chunk.js"
   ]
 }

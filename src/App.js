@@ -2,39 +2,57 @@ import React, { useState } from 'react';
 import './App.css';
 import Shelf from './components/Shelf/Shelf';
 import AddTask from './components/AddTask/AddTask';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
   // delete function needs confirmation step
-// regex task str length
-// need an add shelf button
-// each shelf needs a default addtask bottle in addition to any bottles
+  // regex task str length
+// seconds since 1970 so subtraction should work
+  // need an add shelf button
+  // each shelf needs a default addtask bottle in addition to any bottles
 
   // destructuring method
   const [tasks, setTasks] = useState([
-    { text: 'Fly to Mars', isCompleted: true, shelf: 'morning', bottle:1,  taskID: '001', pos: 1, deadline: 4 },  /*an array instead with a b/n bool*/
-    { text: 'Get marooned', isCompleted: false, shelf: 'morning', bottle:1,  taskID: '003', pos: 1, deadline: 0}, // rearrange the order of the properties to be tidier
-    { text: 'Grow spuds from poo', isCompleted: false, shelf: 'morning', bottle:1,  taskID: '002',pos: 0, deadline: 2},
-    { text: 'Stay home', isCompleted: true, shelf: 'morning', bottle:2,  taskID: '013', pos: 1, deadline: 4 },
-    { text: 'Protect the NHS', isCompleted: false, shelf: 'morning', bottle:2,  taskID: '012', pos: 0, deadline: 0},
-    { text: 'Save lives', isCompleted: false, shelf: 'morning', bottle:2,  taskID: '011', pos: 0, deadline: 2},
-    { text: 'Walk cats', isCompleted: true, shelf: 'afternoon', bottle:2,  taskID: '004', pos: 0, deadline: 11},
-    { text: 'Wash dinner', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: '005', pos: 0, deadline: 7},
-    { text: 'Dress dog', isCompleted: false, shelf: 'afternoon', bottle:1,  taskID: '006', pos: 0, }, // needs to handle no deadline
-    { text: 'Walk kids', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: '007', pos: 0, deadline: 8},
-    { text: 'Watch Alien', isCompleted: false, shelf: 'evening', bottle:1,  taskID: '008', pos: 1, deadline: 24},
-    { text: 'Watch Aliens', isCompleted: true, shelf: 'evening', bottle:1,  taskID: '009', pos: 0, deadline: 365},
-    { text: 'Go to bed', isCompleted: false, shelf: 'evening', bottle:2, taskID: '010', pos: 0, deadline: 1},
-    { text: 'Midnight feast', isCompleted: false, shelf: 'evening', bottle:3, taskID: '014', pos: 0, deadline: 1},
-    { text: 'Wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: '015', pos: 0, deadline: 1},
-    { text: 'Nother wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: '016', pos: 1, deadline: 1}
+    { text: 'Fly to Mars', isCompleted: true, shelf: 'morning', bottle:1,  taskID: uuidv4(), pos: 1, deadline: 4 },  /*an array instead with a b/n bool*/
+    { text: 'Get marooned', isCompleted: false, shelf: 'morning', bottle:1,  taskID: uuidv4(), pos: 1, deadline: 0}, // rearrange the order of the properties to be tidier
+    { text: 'Grow spuds from poo', isCompleted: false, shelf: 'morning', bottle:1,  taskID: uuidv4(),pos: 0, deadline: 2},
+    { text: 'Stay home', isCompleted: true, shelf: 'morning', bottle:2,  taskID: uuidv4(), pos: 1, deadline: 4 },
+    { text: 'Protect the NHS', isCompleted: false, shelf: 'morning', bottle:2,  taskID:uuidv4(), pos: 0, deadline: 0},
+    { text: 'Save lives', isCompleted: false, shelf: 'morning', bottle:2,  taskID: uuidv4(), pos: 0, deadline: 2},
+    // { text: 'Walk cats', isCompleted: true, shelf: 'afternoon', bottle:2,  taskID: uuidv4(), pos: 0, deadline: 11},
+    // { text: 'Wash dinner', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 7},
+    // { text: 'Dress dog', isCompleted: false, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, }, // needs to handle no deadline
+    // { text: 'Walk kids', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 8},
+    // { text: 'Watch Alien', isCompleted: false, shelf: 'evening', bottle:1,  taskID: uuidv4(), pos: 1, deadline: 24},
+    // { text: 'Watch Aliens', isCompleted: true, shelf: 'evening', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 365},
+    // { text: 'Go to bed', isCompleted: false, shelf: 'evening', bottle:2, taskID: uuidv4(), pos: 0, deadline: 1},
+    // { text: 'Midnight feast', isCompleted: false, shelf: 'evening', bottle:3, taskID: uuidv4(), pos: 0, deadline: 1},
+    // { text: 'Wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: uuidv4(), pos: 0, deadline: 1},
+    // { text: 'Nother wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: uuidv4(), pos: 1, deadline: 1}
   ]);
 
-  function addTask(addTaskStatus) {
-    //console.log('App Add task function activated');
-    console.log(addTaskStatus);
+  function addTask(text, dueDate) {
+    const newTask = { 
+      text: text, 
+      isCompleted: false, 
+      shelf: 'morning', // it needs to know its shelf
+      bottle:1,  // it needs to know its bottle
+      taskID: uuidv4(), 
+      pos: 1, // how to do this?
+      deadline: dueDate }
+
+    const updatedTasks = [ ...tasks, newTask ]
+
+    setTasks(updatedTasks);
+
+  }
+
+  function createTask(createTaskStatus) {
+    //console.log('App create task function activated');
+    console.log(createTaskStatus);
     // needs to identify correct shelf, bottle and position to add the task with correct info
-    setTasks(tasks); // needs to update 'something' so add task button updates so not tasks, but what and where
+    // needs to update 'something' so create task button updates so not tasks, but what and where
   }
 
   function deleteTask(id) {

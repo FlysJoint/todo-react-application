@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import './AddTask.css';
 
 import addIcon from '../../icons/addIcon.svg'
@@ -9,80 +9,96 @@ import downIcon from '../../icons/downIcon.svg'
 import cancelIcon from '../../icons/deleteIcon.svg'
 
 
-function AddTask(props) {
 
-    let addTaskStatus = 0;
+function AddTask (props) {
 
-    function switchTaskStatus() {
-        addTaskStatus === 0 ? addTaskStatus = 1 : addTaskStatus = 0;
-        //console.log('switching within AddTask.js');
-        props.addTask(addTaskStatus);
+    const [text, setText] = useState('');
+    const [dueDate, setDueDate] = useState('');
+
+    let createTaskStatus = 1;
+
+    function handleTextChange(event) {
+        setText(event.target.value);
+        // console.log(event.target.value);
     }
 
-    function switchLayout() {
+    function handleDateChange(event) {
+        setDueDate(event.target.value);
+    }
 
-        switch (addTaskStatus) {
-            case 0:
-                return ( 
-                    <Fragment>
+    function handleAddTaskClick() {
+        props.addTask(text, dueDate);
+    }
+
+    // return ( 
+    //     <Fragment>
+    //         <button 
+    //             type="button" className="col-12 btn" id="outline"
+    //             data-toggle="tooltip" data-placement="right" title="Add task" >
+    //             <img src={ addIcon } alt='' className='add-svg'/>
+    //         </button>
+    //     </Fragment>
+    // );
+
+    return  (   
+        <Fragment>
+            <div className="card">
+                <div className="card-body" id='task-body' >
+                    <div className="row">
+
                         <button 
-                            type="button" className="col-12 btn" id="outline"  onClick={ () => switchTaskStatus() }
-                            data-toggle="tooltip" data-placement="right" title="Add task" >
-                            <img src={ addIcon } alt='' className='add-svg'/>
+                            type="button" 
+                            className="col-2 btn"
+                            data-toggle="tooltip" 
+                            data-placement="right" 
+                            title="Add task above"
+                            onClick={  handleAddTaskClick }
+                            >
+                            <img src={ upIcon } alt='' className='up-svg'/>
                         </button>
-                    </Fragment>
-                );
-            case 1:
-                return  (   
-                    <Fragment>
-                        <div className="card">
-                            <div className="card-body" id='task-body' >
-                                <div className="row">
 
-                                    <button 
-                                        type="button" className="col-2 btn"
+                        <button 
+                            type="button" className="col-2 btn"
 
-                                        data-toggle="tooltip" data-placement="right" title="Add task above">
-                                        <img src={ upIcon } alt='' className='up-svg'/>
-                                    </button>
+                            data-toggle="tooltip" data-placement="right" title="Add task below">
+                            <img src={ downIcon } alt='' className='down-svg'/>
+                        </button>
 
-                                    <button 
-                                        type="button" className="col-2 btn"
+                        <input
+                            type='date'
+                            className="card-text col-6" 
+                            id="outline" 
+                            data-toggle="tooltip" 
+                            data-placement="bottom" 
+                            title="Optional deadline" 
+                            display="inline"
+                            onChange={ handleDateChange }
+                            value={ dueDate }
+                        />
+                        
 
-                                        data-toggle="tooltip" data-placement="right" title="Add task below">
-                                        <img src={ downIcon } alt='' className='down-svg'/>
-                                    </button>
+                        <button 
+                            type="button" className="col-2 btn" onClick={ () => props.createTask(createTaskStatus) }
 
-                                    <h6 className="card-text col-6" id="outline" data-toggle="tooltip" data-placement="bottom" title="Optional deadline" display="inline">{ '0 days'}</h6>
+                            data-toggle="tooltip" data-placement="right" title="Cancel task" >
+                            <img src={ cancelIcon } alt='' className='delete-svg'/>
+                        </button>
 
-                                    <button 
-                                        type="button" className="col-1 btn" 
+                        <input
+                            id='task-text'
+                            className="card-text col-12" 
+                            data-toggle="tooltip" 
+                            data-placement="bottom"
+                            title="Add task text"
+                            // placeholder='...add task here'
+                            onChange={ handleTextChange }
+                            value = { text }
+                        /> 
 
-                                        data-toggle="tooltip" data-placement="right" title="Cancel task" >
-                                        <img src={ cancelIcon } alt='' className='delete-svg'/>
-                                    </button>
-
-                                    <p 
-                                        id='task-text'
-                                        className="card-text col-12" 
-                                        data-toggle="tooltip" 
-                                        data-placement="bottom"
-                                        title="Add task text"
-                                        placeholder='...add task here'
-                                        >
-                                    </p>    
-
-                                </div>
-                            </div>
-                        </div>
-                    </Fragment> 
-                );
-            default:
-                console.log('invalid add task layout');
-        }
-    }
-
-  return switchLayout();
+                    </div>
+                </div>
+            </div>
+        </Fragment> 
+    );
 }
-
 export default AddTask;

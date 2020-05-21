@@ -45,8 +45,8 @@
 }
 
 .delete-svg {
-    height: 30px;
-    padding: 1px;
+    height: 40px;
+    width: 40px;
 }
 
 #completed-task-text {

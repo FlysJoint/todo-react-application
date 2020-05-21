@@ -1,7 +1,7 @@
 import React from 'react';
 import './TaskItem.css';
 
-import deleteIcon from '../../icons/delete.svg'
+import deleteIcon from '../../icons/deleteIcon.svg'
 
 function TaskItem(props) {
 
@@ -24,7 +24,7 @@ function TaskItem(props) {
           <h6 className="card-text col-8" id="outline" data-toggle="tooltip" data-placement="bottom" title="Optional deadline" display="inline">{props.deadline > 1 ? `${props.deadline} days` : '1 DAY!!!'}</h6>
 
           <button 
-            type="button" className="col-1 btn" id="outline" onClick={ () => props.deleteTask(props.taskID) }
+            type="button" className="col-1 btn" onClick={ () => props.deleteTask(props.taskID) }
 
             data-toggle="tooltip" data-placement="right" title="Delete task">
             <img src={ deleteIcon } alt='' className='delete-svg'/>

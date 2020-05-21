@@ -1,8 +1,9 @@
 import React from 'react';
 import './Bottle.css';
 import TaskItem from '../TaskItem/TaskItem';
+import AddTask from '../AddTask/AddTask';
 
-import addIcon from '../../icons/cross.svg' // delete this after adding add
+import addIcon from '../../icons/addIcon.svg'
 
 function Bottle(props) {
 
@@ -14,12 +15,13 @@ function Bottle(props) {
     let taskHTML = [];
 
     // add task button needs to be added here so it's between push and unshifts
-    taskHTML.push(
-      <button 
-        type="button" className="col-12 btn" id="outline"
-        data-toggle="tooltip" data-placement="right" title="Add task" onClick={ () => props.addTask() }>
-        <img src={ addIcon } alt='' className='add-svg'/>
-      </button>);
+    taskHTML.push(<AddTask addTask={ props.addTask }/>);
+    // taskHTML.push(
+    //   <button 
+    //     type="button" className="col-12 btn" id="outline"
+    //     data-toggle="tooltip" data-placement="right" title="Add task" onClick={ () => props.addTask() }>
+    //     <img src={ addIcon } alt='' className='add-svg'/>
+    //   </button>);
 
     // sorts the tasks into the relevant position
     for (let i = 0; i < props.bottleTasks.length; i++) {

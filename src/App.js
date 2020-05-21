@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Shelf from './components/Shelf/Shelf';
+import AddTask from './components/AddTask/AddTask';
 
 function App() {
 
@@ -29,9 +30,11 @@ function App() {
     { text: 'Nother wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: '016', pos: 1, deadline: 1}
   ]);
 
-  function addTask() {
-    console.log('Add task button clicked');
-    // needs to identify correct shelf, bottle and position to add the task
+  function addTask(addTaskStatus) {
+    //console.log('App Add task function activated');
+    console.log(addTaskStatus);
+    // needs to identify correct shelf, bottle and position to add the task with correct info
+    setTasks(tasks); // needs to update 'something' so add task button updates so not tasks, but what and where
   }
 
   function deleteTask(id) {
@@ -49,7 +52,6 @@ function App() {
     });
     setTasks(updatedTasks);
   }
-
 
   function getShelfTasks(tasks) {
 
@@ -78,8 +80,5 @@ function App() {
         </div>
   );
 }
-
-// put in footer <p> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
-          
-
+        
 export default App;

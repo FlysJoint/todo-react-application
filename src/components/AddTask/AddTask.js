@@ -25,9 +25,17 @@ function AddTask (props) {
         setDueDate(event.target.value);
     }
 
-    function handleAddTaskClick() {
+    function chooseLowerPos() {
+        handleAddTaskClick(0);
+    }
+
+    function chooseHigherPos() {
+        handleAddTaskClick(1);
+    }
+
+    function handleAddTaskClick(pos) {
         console.log(props.myShelf, props.myBottle);
-        props.addTask(text, dueDate, props.myShelf , props.myBottle, 0); // needs to know which shelf, bottle and pos
+        props.addTask(text, dueDate, props.myShelf, props.myBottle, pos); // needs to know which pos
     }
 
     // return ( 
@@ -52,7 +60,7 @@ function AddTask (props) {
                             data-toggle="tooltip" 
                             data-placement="right" 
                             title="Add task above"
-                            onClick={  handleAddTaskClick }
+                            onClick={  chooseHigherPos }
                             >
                             <img src={ upIcon } alt='' className='up-svg'/>
                         </button>
@@ -82,7 +90,7 @@ function AddTask (props) {
                             data-toggle="tooltip" 
                             data-placement="right" 
                             title="Add task below"
-                            onClick={  handleAddTaskClick }
+                            onClick={ chooseLowerPos }
                             >
                             <img src={ downIcon } alt='' className='down-svg'/>
                         </button>

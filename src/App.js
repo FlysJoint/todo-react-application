@@ -20,16 +20,16 @@ function App() {
     { text: 'Stay home', isCompleted: true, shelf: 'morning', bottle:2,  taskID: uuidv4(), pos: 1, deadline: 4 },
     { text: 'Protect the NHS', isCompleted: false, shelf: 'morning', bottle:2,  taskID:uuidv4(), pos: 0, deadline: 0},
     { text: 'Save lives', isCompleted: false, shelf: 'morning', bottle:2,  taskID: uuidv4(), pos: 0, deadline: 2},
-    // { text: 'Walk cats', isCompleted: true, shelf: 'afternoon', bottle:2,  taskID: uuidv4(), pos: 0, deadline: 11},
-    // { text: 'Wash dinner', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 7},
-    // { text: 'Dress dog', isCompleted: false, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, }, // needs to handle no deadline
-    // { text: 'Walk kids', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 8},
-    // { text: 'Watch Alien', isCompleted: false, shelf: 'evening', bottle:1,  taskID: uuidv4(), pos: 1, deadline: 24},
-    // { text: 'Watch Aliens', isCompleted: true, shelf: 'evening', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 365},
-    // { text: 'Go to bed', isCompleted: false, shelf: 'evening', bottle:2, taskID: uuidv4(), pos: 0, deadline: 1},
-    // { text: 'Midnight feast', isCompleted: false, shelf: 'evening', bottle:3, taskID: uuidv4(), pos: 0, deadline: 1},
-    // { text: 'Wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: uuidv4(), pos: 0, deadline: 1},
-    // { text: 'Nother wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: uuidv4(), pos: 1, deadline: 1}
+    { text: 'Walk cats', isCompleted: true, shelf: 'afternoon', bottle:2,  taskID: uuidv4(), pos: 0, deadline: 11},
+    { text: 'Wash dinner', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 7},
+    { text: 'Dress dog', isCompleted: false, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, }, // needs to handle no deadline
+    { text: 'Walk kids', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 8},
+    { text: 'Watch Alien', isCompleted: false, shelf: 'evening', bottle:1,  taskID: uuidv4(), pos: 1, deadline: 24},
+    { text: 'Watch Aliens', isCompleted: true, shelf: 'evening', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 365},
+    { text: 'Go to bed', isCompleted: false, shelf: 'evening', bottle:2, taskID: uuidv4(), pos: 0, deadline: 1},
+    { text: 'Midnight feast', isCompleted: false, shelf: 'evening', bottle:3, taskID: uuidv4(), pos: 0, deadline: 1},
+    { text: 'Wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: uuidv4(), pos: 0, deadline: 1},
+    { text: 'Nother wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: uuidv4(), pos: 1, deadline: 1}
   ]);
 
   function addTask(text, dueDate, shelf, bottle, pos) {

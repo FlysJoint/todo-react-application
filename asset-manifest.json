@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/todo-react-application/static/css/main.77ca9b8e.chunk.css",
-    "main.js": "/todo-react-application/static/js/main.ff038a5a.chunk.js",
-    "main.js.map": "/todo-react-application/static/js/main.ff038a5a.chunk.js.map",
+    "main.js": "/todo-react-application/static/js/main.b6709a13.chunk.js",
+    "main.js.map": "/todo-react-application/static/js/main.b6709a13.chunk.js.map",
     "runtime-main.js": "/todo-react-application/static/js/runtime-main.60bbbdb5.js",
     "runtime-main.js.map": "/todo-react-application/static/js/runtime-main.60bbbdb5.js.map",
-    "static/js/2.cf3469e9.chunk.js": "/todo-react-application/static/js/2.cf3469e9.chunk.js",
-    "static/js/2.cf3469e9.chunk.js.map": "/todo-react-application/static/js/2.cf3469e9.chunk.js.map",
+    "static/js/2.e9beb7a9.chunk.js": "/todo-react-application/static/js/2.e9beb7a9.chunk.js",
+    "static/js/2.e9beb7a9.chunk.js.map": "/todo-react-application/static/js/2.e9beb7a9.chunk.js.map",
     "index.html": "/todo-react-application/index.html",
-    "precache-manifest.db4bfb82e78c93f58a7495537f8b104b.js": "/todo-react-application/precache-manifest.db4bfb82e78c93f58a7495537f8b104b.js",
+    "precache-manifest.1f812d641a77f9a063ddd3388e8fc435.js": "/todo-react-application/precache-manifest.1f812d641a77f9a063ddd3388e8fc435.js",
     "service-worker.js": "/todo-react-application/service-worker.js",
     "static/css/main.77ca9b8e.chunk.css.map": "/todo-react-application/static/css/main.77ca9b8e.chunk.css.map",
-    "static/js/2.cf3469e9.chunk.js.LICENSE.txt": "/todo-react-application/static/js/2.cf3469e9.chunk.js.LICENSE.txt",
+    "static/js/2.e9beb7a9.chunk.js.LICENSE.txt": "/todo-react-application/static/js/2.e9beb7a9.chunk.js.LICENSE.txt",
     "static/media/addIcon.svg": "/todo-react-application/static/media/addIcon.5e4c0d9f.svg",
     "static/media/deleteIcon.svg": "/todo-react-application/static/media/deleteIcon.b789f4a2.svg",
     "static/media/downIcon.svg": "/todo-react-application/static/media/downIcon.6fd5c4ae.svg",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.60bbbdb5.js",
-    "static/js/2.cf3469e9.chunk.js",
+    "static/js/2.e9beb7a9.chunk.js",
     "static/css/main.77ca9b8e.chunk.css",
-    "static/js/main.ff038a5a.chunk.js"
+    "static/js/main.b6709a13.chunk.js"
   ]
 }

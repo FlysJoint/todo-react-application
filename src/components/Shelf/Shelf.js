@@ -1,6 +1,7 @@
 import React from 'react';
 import './Shelf.css';
 import Bottle from '../Bottle/Bottle';
+import { v4 as uuidv4 } from 'uuid';
 
 function Shelf(props) {
 
@@ -22,12 +23,14 @@ function Shelf(props) {
       bTasks[i] = props.shelfTasks.filter(x => x.bottle === bottleTitles[i]);
       bottleHTML.push(
         <Bottle 
-          key={props.shelfTasks[i].taskID} 
+          key={ uuidv4() } // change this to shelf?
           bottleTasks={bTasks[i]} 
           deleteTask={ props.deleteTask } 
           completeTask={ props.completeTask } 
           addTask={ props.addTask }
           text={props.shelfTasks[i].shelf}
+          myShelf = { props.myShelf }
+          myBottle = { bottleTitles[i] }
         />);
     }
     return <div className="row" id="nowrap">{bottleHTML}</div>;
@@ -38,7 +41,7 @@ function Shelf(props) {
         <div className="container screen">
             {getBottleTasks(props)}
         </div>
-        <div className = "row shelf" id="nowrap">shelf name justify me</div>
+        <div className = "row shelf" id="nowrap">{ props.myShelf } justify me</div>
     </div>
   );
 }

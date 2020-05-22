@@ -15,7 +15,12 @@ function Bottle(props) {
     let taskHTML = [];
 
     // add task button needs to be added here so it's between push and unshifts
-    taskHTML.push(<AddTask addTask={ props.addTask }/>);
+    taskHTML.push(
+      <AddTask 
+        myShelf ={ props.myShelf }
+        myBottle={ props.myBottle } 
+        addTask={ props.addTask }
+      />);
     // taskHTML.push(
     //   <button 
     //     type="button" className="col-12 btn" id="outline"

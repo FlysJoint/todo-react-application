@@ -19,7 +19,6 @@ function AddTask (props) {
 
     function handleTextChange(event) {
         setText(event.target.value);
-        // console.log(event.target.value);
     }
 
     function handleDateChange(event) {
@@ -27,7 +26,8 @@ function AddTask (props) {
     }
 
     function handleAddTaskClick() {
-        props.addTask(text, dueDate);
+        console.log(props.myShelf, props.myBottle);
+        props.addTask(text, dueDate, props.myShelf , props.myBottle, 0); // needs to know which shelf, bottle and pos
     }
 
     // return ( 
@@ -57,16 +57,16 @@ function AddTask (props) {
                             <img src={ upIcon } alt='' className='up-svg'/>
                         </button>
 
-                        <button 
+                        {/* <button 
                             type="button" className="col-2 btn"
 
                             data-toggle="tooltip" data-placement="right" title="Add task below">
                             <img src={ downIcon } alt='' className='down-svg'/>
-                        </button>
+                        </button> */}
 
                         <input
                             type='date'
-                            className="card-text col-6" 
+                            className="card-text col-8" 
                             id="outline" 
                             data-toggle="tooltip" 
                             data-placement="bottom" 
@@ -76,13 +76,23 @@ function AddTask (props) {
                             value={ dueDate }
                         />
                         
-
                         <button 
+                            type="button" 
+                            className="col-2 btn"
+                            data-toggle="tooltip" 
+                            data-placement="right" 
+                            title="Add task below"
+                            onClick={  handleAddTaskClick }
+                            >
+                            <img src={ downIcon } alt='' className='down-svg'/>
+                        </button>
+
+                        {/* <button 
                             type="button" className="col-2 btn" onClick={ () => props.createTask(createTaskStatus) }
 
                             data-toggle="tooltip" data-placement="right" title="Cancel task" >
                             <img src={ cancelIcon } alt='' className='delete-svg'/>
-                        </button>
+                        </button> */}
 
                         <input
                             id='task-text'

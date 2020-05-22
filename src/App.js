@@ -32,27 +32,19 @@ function App() {
     // { text: 'Nother wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: uuidv4(), pos: 1, deadline: 1}
   ]);
 
-  function addTask(text, dueDate) {
+  function addTask(text, dueDate, shelf, bottle, pos) {
     const newTask = { 
       text: text, 
       isCompleted: false, 
-      shelf: 'morning', // it needs to know its shelf
-      bottle:1,  // it needs to know its bottle
+      shelf: shelf,
+      bottle: bottle,
       taskID: uuidv4(), 
-      pos: 1, // how to do this?
+      pos: pos,
       deadline: dueDate }
 
     const updatedTasks = [ ...tasks, newTask ]
 
     setTasks(updatedTasks);
-
-  }
-
-  function createTask(createTaskStatus) {
-    //console.log('App create task function activated');
-    console.log(createTaskStatus);
-    // needs to identify correct shelf, bottle and position to add the task with correct info
-    // needs to update 'something' so create task button updates so not tasks, but what and where
   }
 
   function deleteTask(id) {
@@ -87,7 +79,7 @@ function App() {
     // sorts the tasks into the relevant shelf
     for (let i = 0; i < shelfTitles.length; i++) {
       sTasks[i] = Object.values(tasks).filter(x => x.shelf === shelfTitles[i]);
-      shelvesHTML.push(<Shelf key={ tasks[i].taskID } shelfTasks={sTasks[i]} deleteTask={ deleteTask } completeTask={ completeTask } addTask={ addTask }/>);
+      shelvesHTML.push(<Shelf key={ shelfTitles[i] } myShelf={ shelfTitles[i] } shelfTasks={sTasks[i]} deleteTask={ deleteTask } completeTask={ completeTask } addTask={ addTask }/>);
     }
     return <div>{shelvesHTML}</div>;
   }

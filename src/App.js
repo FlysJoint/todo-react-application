@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Shelf from './components/Shelf/Shelf';
 import AddTask from './components/AddTask/AddTask';
 import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 
 function App() {
 
@@ -13,25 +14,18 @@ function App() {
   // each shelf needs a default addtask bottle in addition to any bottles
   // bottle needs to remain open even if only contains new tasks
 
-  // destructuring method
-  const [tasks, setTasks] = useState([
-    { text: 'Fly to Mars', isCompleted: true, shelf: 'morning', bottle:1,  taskID: uuidv4(), pos: 1, deadline: 4 },  /*an array instead with a b/n bool*/
-    { text: 'Get marooned', isCompleted: false, shelf: 'morning', bottle:1,  taskID: uuidv4(), pos: 1, deadline: 0}, // rearrange the order of the properties to be tidier
-    { text: 'Grow spuds from poo', isCompleted: false, shelf: 'morning', bottle:1,  taskID: uuidv4(),pos: 0, deadline: 2},
-    { text: 'Stay home', isCompleted: true, shelf: 'morning', bottle:2,  taskID: uuidv4(), pos: 1, deadline: 4 },
-    { text: 'Protect the NHS', isCompleted: false, shelf: 'morning', bottle:2,  taskID:uuidv4(), pos: 0, deadline: 0},
-    { text: 'Save lives', isCompleted: false, shelf: 'morning', bottle:2,  taskID: uuidv4(), pos: 0, deadline: 2},
-    { text: 'Walk cats', isCompleted: true, shelf: 'afternoon', bottle:2,  taskID: uuidv4(), pos: 0, deadline: 11},
-    { text: 'Wash dinner', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 7},
-    { text: 'Dress dog', isCompleted: false, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, }, // needs to handle no deadline
-    { text: 'Walk kids', isCompleted: true, shelf: 'afternoon', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 8},
-    { text: 'Watch Alien', isCompleted: false, shelf: 'evening', bottle:1,  taskID: uuidv4(), pos: 1, deadline: 24},
-    { text: 'Watch Aliens', isCompleted: true, shelf: 'evening', bottle:1,  taskID: uuidv4(), pos: 0, deadline: 365},
-    { text: 'Go to bed', isCompleted: false, shelf: 'evening', bottle:2, taskID: uuidv4(), pos: 0, deadline: 1},
-    { text: 'Midnight feast', isCompleted: false, shelf: 'evening', bottle:3, taskID: uuidv4(), pos: 0, deadline: 1},
-    { text: 'Wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: uuidv4(), pos: 0, deadline: 1},
-    { text: 'Nother wee', isCompleted: false, shelf: 'evening', bottle:4, taskID: uuidv4(), pos: 1, deadline: 1}
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://pgbx7na299.execute-api.eu-west-2.amazonaws.com/dev/tasks")
+      .then(res => {
+        setTasks(res.data.tasks);
+      })
+      .catch(err => {
+        console.log("Could not fetch tasks", err);
+      });
+  }, []);
 
   function addTask(text, dueDate, shelf, bottle, pos) {
     const newTask = { 

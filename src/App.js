@@ -11,6 +11,7 @@ function App() {
 // seconds since 1970 so subtraction should work
   // need an add shelf button
   // each shelf needs a default addtask bottle in addition to any bottles
+  // bottle needs to remain open even if only contains new tasks
 
   // destructuring method
   const [tasks, setTasks] = useState([

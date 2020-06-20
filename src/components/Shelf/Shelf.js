@@ -41,7 +41,7 @@ function Shelf(props) {
         <div className="container screen">
             {getBottleTasks(props)}
         </div>
-        <div className = "row shelf" id="nowrap">{ props.myShelf } justify me</div>
+        <div className = "row shelf" id="nowrap">{ props.myShelf }</div>
     </div>
   );
 }

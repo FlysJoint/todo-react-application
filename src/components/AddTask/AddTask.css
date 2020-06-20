@@ -32,21 +32,22 @@
 #outline {
     border: 5px solid black;
     border-radius: .75rem;
+    width: auto;
 }
 
 .down-svg {
-    height: 40px;
-    width: 40px;
+    height: 3rem;
+    width: 3rem;
 }
 
 .up-svg {
-    height: 40px;
-    width: 40px;
+    height: 3rem;
+    width: 3rem;
 }
 
 .delete-svg {
-    height: 40px;
-    width: 40px;
+    height: 3rem;
+    width: 3rem;
 }
 
 #completed-task-text {
@@ -78,6 +79,6 @@
 .large-check-box {
     border: 10px solid black;
     border-radius: .75rem;
-    height: 30px;
-    width: 30px;
+    height: 3rem;
+    width: 3rem;
 }

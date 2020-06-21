@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Shelf from './components/Shelf/Shelf';
-import AddTask from './components/AddTask/AddTask';
-import { v4 as uuidv4 } from 'uuid';
+//import AddTask from './components/AddTask/AddTask';
+//import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
     // }
 
 
-  console.log(newTask);
+  //console.log(newTask);
 
     axios
     .post('https://pgbx7na299.execute-api.eu-west-2.amazonaws.com/dev/tasks', newTask)
@@ -71,6 +71,67 @@ function App() {
     // setTasks(updatedTasks);
   }
 
+// ---------------------------
+
+function completeTask(id) {
+
+  //console.log(tasks);
+    const updatedTasks = tasks.map(task => {
+      if(task.taskID === id) {
+        !task.isCompleted ? task.isCompleted = 1 : task.isCompleted = 0;
+      }
+      return task;
+    });
+
+  // const staticTasks = tasks.filter(task => task.taskID !== id);
+  //const updatedTasks = tasks.filter(task => task.taskID === id); // it's an array not the object!!! need to change iscomplete
+  // console.log(updatedTasks);
+
+
+  //   const updatedTasks = { 
+  //   "text": "is it username again",
+  //   "shelf": "morning",
+  //   "bottle": 6,
+  //   "pos": 0,
+  //   "isCompleted": false,
+  //   "username": "bob5"
+  // }
+
+    //console.log (updatedTasks);
+
+    axios
+    .put(
+      `https://pgbx7na299.execute-api.eu-west-2.amazonaws.com/dev/tasks/${id}`, updatedTasks[0]
+    )
+    .then(res => {
+      // There is probably no data returned from a Put request.
+      //console.log(res.data);
+      // But if you're in the "then" function you know the request succeeded.
+      console.log('complete ' + id + ' clicked');
+    })
+    .catch(err => {
+      console.log("Error updating task " + id, err);
+    });
+
+    // console.log(tasks);
+    // console.log(updatedTasks);
+    setTasks( updatedTasks );
+
+  }
+  
+// -----------------------------------
+
+  // function completeTask(id) {
+  //   console.log('complete ' + id + ' clicked');
+  //   const updatedTasks = tasks.map(task => {
+  //     if(task.taskID === id) {
+  //       !task.isCompleted ? task.isCompleted = true : task.isCompleted = false;
+  //     }
+  //     return task;
+  //   });
+  //   setTasks(updatedTasks);
+  // }
+
   function deleteTask(id) {
     // const updatedTasks = tasks.filter(task => task.taskID !== id);
     // setTasks(updatedTasks);
@@ -87,17 +148,6 @@ function App() {
         console.log("Could not delete task", err);
       });
 
-  }
-
-  function completeTask(id) {
-    console.log('complete ' + id + ' clicked');
-    const updatedTasks = tasks.map(task => {
-      if(task.taskID === id) {
-        !task.isCompleted ? task.isCompleted = true : task.isCompleted = false;
-      }
-      return task;
-    });
-    setTasks(updatedTasks);
   }
 
   function getShelfTasks(tasks) {

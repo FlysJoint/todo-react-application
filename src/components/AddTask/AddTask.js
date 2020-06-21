@@ -1,13 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import './AddTask.css';
-
-import addIcon from '../../icons/addIcon.svg'
-
 import upIcon from '../../icons/upIcon.svg'
 import downIcon from '../../icons/downIcon.svg'
-
-import cancelIcon from '../../icons/deleteIcon.svg'
-
 
 
 function AddTask (props) {

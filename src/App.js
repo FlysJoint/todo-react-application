@@ -29,17 +29,46 @@ function App() {
 
   function addTask(text, dueDate, shelf, bottle, pos) {
     const newTask = { 
-      text: text, 
-      isCompleted: false, 
-      shelf: shelf,
-      bottle: bottle,
-      taskID: uuidv4(), 
-      pos: pos,
-      deadline: dueDate }
+      "text": text,
+      "dueDate": dueDate,
+      "isCompleted": false, 
+      "shelf": shelf,
+      "bottle": bottle, 
+      "pos": pos,
+      "username": "bob5" 
+    }
 
-    const updatedTasks = [ ...tasks, newTask ]
+    // const newTask = { 
+    // "text": "still get front end post to work",
+    // "dueDate": "",
+    // "isCompleted": false,
+    // "shelf": "morning",
+    // "bottle": 6,
+    // "pos": 0,
+    // "username": "bob5"
+    // }
 
-    setTasks(updatedTasks);
+
+  console.log(newTask);
+
+    axios
+    .post('https://pgbx7na299.execute-api.eu-west-2.amazonaws.com/dev/tasks', newTask)
+    .then(// If the request is successful, get the task id and add it to the new task object
+      (res) => {
+        //newTask.taskID = res.data.tasks.taskID;
+        const updatedTasks = [ ...tasks, newTask ];
+        setTasks( updatedTasks );
+      }
+    )
+    .catch((err) => {
+      console.log('Error in adding a task', err)
+    })
+    .finally(
+      console.log(newTask)
+    )
+
+    // const updatedTasks = [ ...tasks, newTask ]
+    // setTasks(updatedTasks);
   }
 
   function deleteTask(id) {

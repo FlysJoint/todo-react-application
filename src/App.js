@@ -37,14 +37,14 @@ function App() {
       "shelf": shelf,
       "bottle": bottle, 
       "pos": pos,
-      "username": "bob5" 
+      "username": "bob5"
     }
 
     axios
     .post('https://pgbx7na299.execute-api.eu-west-2.amazonaws.com/dev/tasks', newTask)
     .then(// If the request is successful, get the task id and add it to the new task object
       (res) => {
-        const updatedTasks = [ ...tasks, newTask ];
+        const updatedTasks = [ ...tasks, res.data.task[0] ];
         setTasks( updatedTasks );
       }
     )
@@ -74,15 +74,6 @@ function completeTask(id) {
       // There is probably no data returned from a Put request.
       // But if you're in the "then" function you know the request succeeded.
       console.log('complete ' + id + ' clicked');
-
-      // axios
-      //   .get("https://pgbx7na299.execute-api.eu-west-2.amazonaws.com/dev/tasks")
-      //   .then(res => {
-      //     setTasks(res.data.tasks);
-      //   })
-      //   .catch(err => {
-      //     console.log("Could not fetch tasks", err);
-      //   });
 
     })
     .catch(err => {

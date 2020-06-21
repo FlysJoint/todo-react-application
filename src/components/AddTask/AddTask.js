@@ -21,7 +21,7 @@ function AddTask (props) {
 
     function handleAddTaskClick(pos) {
         console.log(props.myShelf, props.myBottle);
-        props.addTask(text, dueDate, props.myShelf, props.myBottle, pos); // needs to know which pos
+        props.addTask(text, dueDate, props.myShelf, props.myBottle, pos, props.taskID); // needs to know which pos
     }
 
     // return ( 

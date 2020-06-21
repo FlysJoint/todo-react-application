@@ -64,7 +64,7 @@ function App() {
       console.log('Error in adding a task', err)
     })
     .finally(
-      console.log(newTask)
+      //console.log(newTask)
     )
 
     // const updatedTasks = [ ...tasks, newTask ]
@@ -72,8 +72,21 @@ function App() {
   }
 
   function deleteTask(id) {
-    const updatedTasks = tasks.filter(task => task.taskID !== id);
-    setTasks(updatedTasks);
+    // const updatedTasks = tasks.filter(task => task.taskID !== id);
+    // setTasks(updatedTasks);
+
+    axios
+      .delete(`https://pgbx7na299.execute-api.eu-west-2.amazonaws.com/dev/tasks/${id}`)
+      .then(res => {
+        // There is probably no data returned from a Delete request.
+        // But if you're in the "then" function you know the request succeeded.
+        const updatedTasks = tasks.filter(task => task.taskID !== id);
+        setTasks(updatedTasks);
+      })
+      .catch(err => {
+        console.log("Could not delete task", err);
+      });
+
   }
 
   function completeTask(id) {
